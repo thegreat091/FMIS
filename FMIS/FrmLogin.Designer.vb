@@ -98,6 +98,7 @@ Partial Class FrmLogin
         'Button2
         '
         Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button2.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold)
         Me.Button2.Location = New System.Drawing.Point(333, 236)
