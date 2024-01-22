@@ -30,6 +30,7 @@ Public Class FrmLogin
             MessageBox.Show("account found")
             conn.Close()
             nameofuser(txtUsername.Text, txtpassword.Text)
+            Form1.btnlogout.Show()
             Me.Close()
 
         Else

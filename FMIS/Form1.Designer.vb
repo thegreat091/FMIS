@@ -22,15 +22,18 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnlogout = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.btnlogout)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
@@ -38,6 +41,17 @@ Partial Class Form1
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(319, 844)
         Me.Panel1.TabIndex = 0
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(12, 9)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(90, 23)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Welcome!"
         '
         'Label1
         '
@@ -50,16 +64,23 @@ Partial Class Form1
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Label1"
         '
-        'Label2
+        'btnlogout
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(12, 9)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(90, 23)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Welcome!"
+        Me.btnlogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnlogout.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnlogout.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.btnlogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnlogout.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold)
+        Me.btnlogout.ForeColor = System.Drawing.Color.White
+        Me.btnlogout.Image = CType(resources.GetObject("btnlogout.Image"), System.Drawing.Image)
+        Me.btnlogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnlogout.Location = New System.Drawing.Point(0, 796)
+        Me.btnlogout.Name = "btnlogout"
+        Me.btnlogout.Size = New System.Drawing.Size(319, 48)
+        Me.btnlogout.TabIndex = 2
+        Me.btnlogout.Text = "Log out"
+        Me.btnlogout.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnlogout.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -81,4 +102,5 @@ Partial Class Form1
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents btnlogout As Button
 End Class
