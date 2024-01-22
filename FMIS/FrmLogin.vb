@@ -17,26 +17,38 @@ Public Class FrmLogin
     End Sub
 
     Private Sub FrmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Label3.Hide()
+        LinkLabel1.Hide()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-
-
-        conn.Open()
-        Dim cm As New MySqlCommand("SELECT * from tbluser Where Username = '" & txtUsername.Text & "' and Password= '" & txtpassword.Text & "'", conn)
-        Dim reader As MySqlDataReader = cm.ExecuteReader
-        If reader.Read() Then
-            MessageBox.Show("account found")
-            conn.Close()
-            nameofuser(txtUsername.Text, txtpassword.Text)
-            Form1.btnlogout.Show()
-            Me.Close()
-
+        If txtUsername.Text = "admin" And txtpassword.Text = "admin" Then
+            Label3.Show()
+            LinkLabel1.Show()
         Else
-            conn.Close()
-            MessageBox.Show("user not found")
+            conn.Open()
+            Dim cm As New MySqlCommand("SELECT * from tbluser Where Username = '" & txtUsername.Text & "' and Password= '" & txtpassword.Text & "'", conn)
+            Dim reader As MySqlDataReader = cm.ExecuteReader
+            If reader.Read() Then
+                MessageBox.Show("account found")
+                conn.Close()
+                nameofuser(txtUsername.Text, txtpassword.Text)
+                Form1.btnlogout.Show()
+                Form1.btndashboard.Show()
+                Form1.btnbackup.Show()
+                Form1.btnnewtransaction.Show()
+                Form1.btnprintdocument.Show()
+                Form1.btnreports.Show()
+                Form1.btnvalidation.Show()
+                Me.Close()
+
+            Else
+                conn.Close()
+                MessageBox.Show("user not found")
+            End If
         End If
+
+
 
 
     End Sub
@@ -57,5 +69,11 @@ Public Class FrmLogin
 
         FrmRegister.Show()
         FrmRegister.BringToFront()
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Form1.Hide()
+        FrmGuest.Show()
+
     End Sub
 End Class

@@ -31,6 +31,7 @@ Partial Class FrmLogin
         Me.Button2 = New System.Windows.Forms.Button()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -130,6 +131,18 @@ Partial Class FrmLogin
         Me.Label3.TabIndex = 6
         Me.Label3.Text = "No account yet? Click"
         '
+        'Button3
+        '
+        Me.Button3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold)
+        Me.Button3.Location = New System.Drawing.Point(-26, 335)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(548, 56)
+        Me.Button3.TabIndex = 7
+        Me.Button3.Text = "Guest"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
         'FrmLogin
         '
         Me.AcceptButton = Me.Button1
@@ -137,7 +150,8 @@ Partial Class FrmLogin
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.CancelButton = Me.Button2
-        Me.ClientSize = New System.Drawing.Size(497, 353)
+        Me.ClientSize = New System.Drawing.Size(497, 391)
+        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.LinkLabel1)
         Me.Controls.Add(Me.Button2)
@@ -165,4 +179,5 @@ Partial Class FrmLogin
     Friend WithEvents Button2 As Button
     Friend WithEvents LinkLabel1 As LinkLabel
     Friend WithEvents Label3 As Label
+    Friend WithEvents Button3 As Button
 End Class
