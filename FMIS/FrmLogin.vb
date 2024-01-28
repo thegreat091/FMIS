@@ -30,7 +30,7 @@ Public Class FrmLogin
             Dim cm As New MySqlCommand("SELECT * from tbluser Where Username = '" & txtUsername.Text & "' and Password= '" & txtpassword.Text & "'", conn)
             Dim reader As MySqlDataReader = cm.ExecuteReader
             If reader.Read() Then
-                MessageBox.Show("account found")
+                'MessageBox.Show("account found")
                 conn.Close()
                 nameofuser(txtUsername.Text, txtpassword.Text)
                 Form1.btnlogout.Show()
@@ -72,8 +72,10 @@ Public Class FrmLogin
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Form1.Hide()
-        FrmGuest.Show()
-
+        Me.Close()
+        Form1.Label1.Text = "Guest!"
+        Form1.Label1.Show()
+        Form1.Label2.Show()
+        Form1.btnlogout.Show()
     End Sub
 End Class
